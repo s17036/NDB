@@ -1,0 +1,70 @@
+1.
+MATCH(n:Movie) RETURN n
+2.
+MATCH(p:Person)-[d:ACTED_IN]->(m:Movie)
+WHERE p.name="Hugo Weaving"
+RETURN m
+3.
+MATCH(p:Person)-[d:ACTED_IN]->(m:Movie)<-[t:DIRECTED]-(r:Person)
+WHERE p.name="Hugo Weaving"
+RETURN DISTINCT r
+4.
+MATCH(p:Person)-[d:ACTED_IN]->(m:Movie)<-[t:ACTED_IN]-(r:Person)
+WHERE p.name="Hugo Weaving"
+RETURN DISTINCT r
+5.
+MATCH(p:Person)-[:ACTED_IN]-(m:Movie)
+WHERE m.title="The Matrix"
+WITH p AS Mcrew
+MATCH(Mcrew)-[:ACTED_IN]-(n:Movie)
+RETURN DISTINCT n.title
+6.
+MATCH(p:Person)-[:ACTED_IN]->(m:Movie)
+WITH p,count(m) AS amount_of_movies
+WHERE amount_of_movies >=1
+RETURN p, amount_of_movies
+7.
+MATCH(p)-[:WROTE]->(m)
+RETURN p,m
+UNION 
+MATCH(p)-[:DIRECTED]->(m)
+RETURN p,m
+ORDER BY p.name
+8.
+MATCH(p)-[:ACTED_IN]->(m:Movie)
+WHERE p.name="Hugo Weaving"
+RETURN m
+UNION
+MATCH(q)-[:ACTED_IN]->(m:Movie)
+WHERE q.name="Keanu Reeves"
+RETURN m
+9.
+CREATE(n:Person{name:"Joe Johnston", born:"1950"})-[:DIRECTED]->(m:Movie{title:"Captain America: The First Avenger", released:"2011"})<-[:WROTE]-(p:Person{name:"Christopher Markus", born:"1970"})
+CREATE(a:Person{name:"Stephen McFeely", born:"1969"})
+CREATE(b:Person{name:"Joe Simon", born:"1913"})
+CREATE(c:Person{name:"Chris Evans", born:"1981"})
+CREATE(c:Person{name:"Samuel L. Jackson", born:"1948"})
+---
+MATCH
+  (a),
+  (b),
+  (m)
+WHERE a.name = 'Stephen McFeely' AND b.name = 'Joe Simon' AND m.title = "Captain America: The First Avenger"
+CREATE (a)-[r:WROTE]->(m)<-[q:WROTE]-(b)
+---
+MATCH
+  (a),
+  (b),
+  (m)
+WHERE a.name = 'Chris Evans' AND b.name = 'Hugo Weaving' AND m.title = "Captain America: The First Avenger"
+CREATE (a)-[r:ACTED_IN]->(m)<-[q:ACTED_IN]-(b)
+---
+MATCH
+  (a),
+  (m)
+WHERE a.name = 'Samuel L. Jackson' AND m.title = "Captain America: The First Avenger"
+CREATE (a)-[r:ACTED_IN]->(m)
+---
+MATCH(a)-[]->(m)
+WHERE m.title='Captain America: The First Avenger'
+RETURN a,m
