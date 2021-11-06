@@ -1,0 +1,31 @@
+Current Mongosh Log ID:	617924a8972f2149c312673c
+Connecting to:		mongodb+srv://cluster0.mwkvs.mongodb.net/myFirstDatabase
+Using MongoDB:		4.4.10
+Using Mongosh:		1.1.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+Loading file: zapytanie_2_A.js
+[
+  { _id: 'BWP', suma: 146972.04 },
+  { _id: 'AUD', suma: 242667.03 },
+  { _id: 'SCR', suma: 14797.58 },
+  { _id: 'HUF', suma: 165192.16 },
+  { _id: 'DKK', suma: 222452.28 },
+  { _id: 'CUP', suma: 514413.88 },
+  { _id: 'AMD', suma: 602964.09 },
+  { _id: 'RSD', suma: 817403.54 },
+  { _id: 'ETB', suma: 269686.62 },
+  { _id: 'CDF', suma: 178097.37 },
+  { _id: 'QAR', suma: 36358.92 },
+  { _id: 'SDG', suma: 127317.75 },
+  { _id: 'XPF', suma: 132926.01 },
+  { _id: 'KWD', suma: 82506.07 },
+  { _id: 'XOF', suma: 934043.61 },
+  { _id: 'BGN', suma: 496641.83 },
+  { _id: 'YER', suma: 583657.38 },
+  { _id: 'MGA', suma: 377675.55 },
+  { _id: 'HKD', suma: 23023.02 },
+  { _id: 'KZT', suma: 584923.2 }
+]
+Type "it" for more

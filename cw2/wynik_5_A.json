@@ -1,0 +1,31 @@
+Current Mongosh Log ID:	617924f5e0bc9ab835e9fb0b
+Connecting to:		mongodb+srv://cluster0.mwkvs.mongodb.net/myFirstDatabase
+Using MongoDB:		4.4.10
+Using Mongosh:		1.1.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+Loading file: zapytanie_5_A.js
+[
+  { _id: 'NZD', sum: 5328.46, avg: 5328.46 },
+  { _id: 'LYD', sum: 8764.99, avg: 4382.495 },
+  { _id: 'UAH', sum: 40471.840000000004, avg: 5058.9800000000005 },
+  { _id: 'PEN', sum: 18644.94, avg: 4661.235 },
+  { _id: 'HRK', sum: 24354.82, avg: 4870.964 },
+  { _id: 'XAF', sum: 14094.66, avg: 4698.22 },
+  { _id: 'IQD', sum: 4269.39, avg: 4269.39 },
+  { _id: 'ALL', sum: 3325.48, avg: 3325.48 },
+  { _id: 'USD', sum: 74680.98, avg: 4978.732 },
+  { _id: 'ARS', sum: 23242, avg: 4648.4 },
+  { _id: 'UZS', sum: 3573.03, avg: 3573.03 },
+  { _id: 'COP', sum: 19746.73, avg: 4936.6825 },
+  { _id: 'PYG', sum: 4874.69, avg: 4874.69 },
+  { _id: 'IDR', sum: 323922.59, avg: 4907.918030303031 },
+  { _id: 'CZK', sum: 37156.42, avg: 4644.5525 },
+  { _id: 'BRL', sum: 49632.020000000004, avg: 4512.001818181819 },
+  { _id: 'NOK', sum: 4773.66, avg: 4773.66 },
+  { _id: 'MWK', sum: 3574.42, avg: 3574.42 },
+  { _id: 'BYR', sum: 5095.79, avg: 5095.79 },
+  { _id: 'SEK', sum: 70840.19, avg: 5060.013571428572 }
+]
+Type "it" for more

@@ -1,0 +1,131 @@
+Current Mongosh Log ID:	617924e62ccf6111f02bee86
+Connecting to:		mongodb+srv://cluster0.mwkvs.mongodb.net/myFirstDatabase
+Using MongoDB:		4.4.10
+Using Mongosh:		1.1.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+Loading file: zapytanie_4_A.js
+[
+  {
+    _id: 'Barbados',
+    minBMI: 21.343242644513325,
+    maxBMI: 21.343242644513325,
+    avgBMI: 21.343242644513325
+  },
+  {
+    _id: 'Portugal',
+    minBMI: 17.25327791895594,
+    maxBMI: 39.66789019620169,
+    avgBMI: 25.473614044537957
+  },
+  {
+    _id: 'American Samoa',
+    minBMI: 22.39833691807659,
+    maxBMI: 22.39833691807659,
+    avgBMI: 22.39833691807659
+  },
+  {
+    _id: 'Palau',
+    minBMI: 29.238705428689137,
+    maxBMI: 29.999359959047865,
+    avgBMI: 29.6190326938685
+  },
+  {
+    _id: 'Oman',
+    minBMI: 23.599509054084226,
+    maxBMI: 27.08402216179085,
+    avgBMI: 25.688221135833004
+  },
+  {
+    _id: 'Equatorial Guinea',
+    minBMI: 24.784158605052227,
+    maxBMI: 24.784158605052227,
+    avgBMI: 24.784158605052227
+  },
+  {
+    _id: 'Bosnia and Herzegovina',
+    minBMI: 16.930664311421882,
+    maxBMI: 35.973950079941275,
+    avgBMI: 25.418629730315732
+  },
+  {
+    _id: 'Nepal',
+    minBMI: 19.748973244733463,
+    maxBMI: 31.07848971764862,
+    avgBMI: 26.43434938647296
+  },
+  {
+    _id: 'Vanuatu',
+    minBMI: 23.049311522774552,
+    maxBMI: 27.20784148023659,
+    avgBMI: 24.697548912916897
+  },
+  {
+    _id: 'Georgia',
+    minBMI: 19.90778936769029,
+    maxBMI: 27.6963070482808,
+    avgBMI: 24.320295824417713
+  },
+  {
+    _id: 'Costa Rica',
+    minBMI: 20.494010942211922,
+    maxBMI: 28.89856961379233,
+    avgBMI: 24.650437337200202
+  },
+  {
+    _id: 'Jordan',
+    minBMI: 21.21020718956612,
+    maxBMI: 32.353159768034715,
+    avgBMI: 26.643190252349186
+  },
+  {
+    _id: 'Palestinian Territory',
+    minBMI: 19.17952511054918,
+    maxBMI: 35.54150728191123,
+    avgBMI: 25.51977107836518
+  },
+  {
+    _id: 'Kosovo',
+    minBMI: 19.25401257063033,
+    maxBMI: 29.624326587170813,
+    avgBMI: 24.13095183240382
+  },
+  {
+    _id: 'Syria',
+    minBMI: 18.668899303500158,
+    maxBMI: 36.40174893568621,
+    avgBMI: 25.379241567006584
+  },
+  {
+    _id: 'Ukraine',
+    minBMI: 17.021559565054986,
+    maxBMI: 36.84222756372364,
+    avgBMI: 25.206155364019796
+  },
+  {
+    _id: 'Luxembourg',
+    minBMI: 19.26705786445957,
+    maxBMI: 33.21935122648016,
+    avgBMI: 26.311128380021454
+  },
+  {
+    _id: 'Kyrgyzstan',
+    minBMI: 16.846474930530864,
+    maxBMI: 34.055769789718404,
+    avgBMI: 23.79456317353873
+  },
+  {
+    _id: 'Liberia',
+    minBMI: 22.648192657509565,
+    maxBMI: 29.633309101288834,
+    avgBMI: 25.901546538832037
+  },
+  {
+    _id: 'Central African Republic',
+    minBMI: 19.61489940198228,
+    maxBMI: 28.95456123722056,
+    avgBMI: 23.916787330266967
+  }
+]
+Type "it" for more

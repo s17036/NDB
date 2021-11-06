@@ -1,0 +1,20 @@
+Current Mongosh Log ID:	6179248dabbacaa1b3dd7dfa
+Connecting to:		mongodb+srv://cluster0.mwkvs.mongodb.net/myFirstDatabase
+Using MongoDB:		4.4.10
+Using Mongosh:		1.1.0
+
+For mongosh info see: [1mhttps://docs.mongodb.com/mongodb-shell/[0m
+
+Loading file: zapytanie_1_A.js
+[
+  {
+    _id: 'Female',
+    avgWeight: 70.11331573604062,
+    avgHeight: 166.81260913705583
+  },
+  {
+    _id: 'Male',
+    avgWeight: 70.01016757520694,
+    avgHeight: 166.73910963052697
+  }
+]
