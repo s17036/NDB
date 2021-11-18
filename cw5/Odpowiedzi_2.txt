@@ -1,0 +1,12 @@
+HTTP/1.1 200 OK
+X-Riak-Vclock: a85hYGBgzGDKBVI8+xkWvk/bJBnGwKAumMGUyJTHyhC+ges2XxYA
+Vary: Accept-Encoding
+Server: MochiWeb/1.1 WebMachine/1.10.9 (cafe not found)
+Link: </buckets/s17036>; rel="up"
+Last-Modified: Thu, 18 Nov 2021 11:09:11 GMT
+ETag: "1VERixZOWlmxF8STdW9B71"
+Date: Thu, 18 Nov 2021 11:28:01 GMT
+Content-Type: application/json
+Content-Length: 70
+
+{"name":"Ken Masters", "nationality":"USA", "height":175, "weight":83}

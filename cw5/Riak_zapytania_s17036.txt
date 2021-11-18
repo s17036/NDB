@@ -1,0 +1,33 @@
+1.
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"Ryu\", \"nationality\":\"Japan\", \"height\":175, \"weight\":85}" -i http://localhost:8098/buckets/s17036/keys/Ryu
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"Ken Masters\", \"nationality\":\"USA\", \"height\":175, \"weight\":83}" -i http://localhost:8098/buckets/s17036/keys/Ken
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"Chun-Li\", \"nationality\":\"China\", \"height\":169, \"weight\":65}" -i http://localhost:8098/buckets/s17036/keys/Chun
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"Cammy White\", \"nationality\":\"UK\", \"height\":164, \"weight\":61}" -i http://localhost:8098/buckets/s17036/keys/Cammy
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"M.Bison\", \"nationality\":\"Thailand\", \"height\":182, \"weight\":112}" -i http://localhost:8098/buckets/s17036/keys/M.Bison
+
+2.
+curl -i http://localhost:8098/buckets/s17036/keys/Ken
+
+3.
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"Ken Masters\", \"sex\":\"male\", \"nationality\":\"USA\", \"height\":175, \"weight\":83}" -i http://localhost:8098/buckets/s17036/keys/Ken
+
+4.
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"Chun-Li\", \"nationality\":\"China\", \"height\":169}" -i http://localhost:8098/buckets/s17036/keys/Chun
+
+5.
+curl –XPUT -H "Content-Type: application/json" -d "{\"name\":\"M.Bison\", \"nationality\":\"Unknown\", \"height\":182, \"weight\":112}" -i http://localhost:8098/buckets/s17036/keys/M.Bison
+
+6.
+curl -XDELETE -i http://localhost:8098/buckets/s17036/keys/M.Bison
+
+7.
+curl -i http://localhost:8098/buckets/s17036/keys/Seth
+
+8.
+curl –XPOST -H "Content-Type: application/json" -d "{\"name\":\"Gill\"}" -i http://localhost:8098/buckets/s17036/keys
+
+9.
+curl -i http://localhost:8098/buckets/s17036/keys/2T193QCosLOL1Va0NDGvRUSQu6u
+
+10.
+curl -XDELETE -i http://localhost:8098/buckets/s17036/keys/2T193QCosLOL1Va0NDGvRUSQu6u
