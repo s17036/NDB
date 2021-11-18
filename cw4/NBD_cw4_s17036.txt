@@ -1,0 +1,64 @@
+1.
+MATCH(n:town{name:"Darjeeling"}),(m:peak{name:"Sandakphu"}) WITH n,m MATCH p = shortestPath((n)-[*..8]-(m)) RETURN p
+2.
+MATCH(n:town{name:"Darjeeling"}), (m:peak{name:"Sandakphu"})
+WITH n, m
+MATCH p = shortestPath((n)-[r*]-(m))
+WHERE all(i IN r WHERE i.winter="true")
+RETURN p
+3.
+MATCH p=(n:town{name:"Darjeeling"})-[*]->(m:peak{name:"Sandakphu"}) RETURN p ORDER BY length(p) desc
+4.
+MATCH (n)-[r:ORIGIN]->(m)
+RETURN m as Airport, count(r) as flights
+Order by flights desc
+5.
+MATCH (f:Flight)<-[:ASSIGN*]-(t:Ticket) with f,MIN(t.price) as cheapest SET f.cheapestSeat = apoc.convert.toFloat(cheapest)
+
+MATCH (f:Flight)<-[:ASSIGN*]-(t:Ticket {class: "business"}) SET f.businessPrice = apoc.convert.toFloat(t.price)
+
+MATCH (f:Flight)<-[:ASSIGN*]-(t:Ticket {class: "firstClass"}) SET f.firstClassPrice = apoc.convert.toFloat(t.price)
+
+MATCH (f:Flight)<-[:ASSIGN*]-(t:Ticket {class: "economy"}) SET f.economyPrice  = apoc.convert.toFloat(t.price) SET f.cheapestSeat = apoc.convert.toFloat(t.cheapestSeat)
+
+MATCH (a:Airport)<-[:ORIGIN]-(f:Flight)-[:DESTINATION]->(b:Airport)
+create (a)-[r:Connection {airline: f.airline,businessPrice: f.businessPrice,cheapestSeat: f.cheapestSeat,economyPrice: f.economyPrice,firstClassPrice: f.firstClassPrice}]->(b)
+
+MATCH f = (n:Airport {name: "LAX"})-[:Connection*..7]->(m:Airport)
+WITH f, reduce(price = 0, i IN relationships(f) |  price + i.cheapestSeat)  as total
+WHERE total < 3000
+Return f, total
+
+6.
+MATCH f = (n:Airport {name: "LAX"})-[:Connection*..7]->(m:Airport {name: "DAY"})
+WITH f, reduce(totalPrice = 0, i IN relationships(f) |  totalPrice + i.cheapestSeat) as total
+Return f, total
+ORDER BY total
+
+7.
+MATCH f = (n:Airport {name: "LAX"})-[:Connection*..7]->(m:Airport {name: "DAY"}))
+WITH f, reduce(totalPrice = 0, i IN relationships(f) |  totalPrice + i.cheapestSeat)  as total
+ORDER BY total
+LIMIT 1
+Return f, total
+
+8.
+MATCH f = (n:Airport {name: "LAX"})-[:Connection*..7]->(m:Airport {name: "DAY"}))
+WITH f, reduce(totalPrice = 0, i IN relationships(f) |  totalPrice + i.businessPrice)  as total
+ORDER BY total
+LIMIT 1
+Return f, total
+
+9.
+MATCH (n:Airport)-[r:Connection]->(m:Airport) 
+WITH r.airline as airlines, n.name + '-'+ m.name as path
+RETURN airlines,Count(Distinct path)
+
+10. 
+MATCH p = (:Airport)-[:Connection]->(:Airport)-[:Connection]->(:Airport)
+WITH path, reduce(totalCost = 0, i in relationships(p) | totalCost + i.cheapestSeat) as total
+ORDER BY total ASC
+LIMIT 1
+RETURN p,total
+
+
