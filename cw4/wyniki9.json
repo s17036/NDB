@@ -1,0 +1,10 @@
+﻿[
+  {
+    "airlines": "19977",
+    "Count(Distinct path)": 121
+  },
+  {
+    "airlines": "20304",
+    "Count(Distinct path)": 35
+  }
+]
