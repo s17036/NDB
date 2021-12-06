@@ -1,0 +1,4 @@
+name=Zangief&nationality=USSR&height=214&weight=181
+name=Zangief&nationality=Russia&height=214&weight=181
+not found
+
