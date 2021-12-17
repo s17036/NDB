@@ -1,0 +1,106 @@
+1.
+def work(d: String)={
+  val w = List("Poniedzialek", "Wtorek", "Sroda", "Czwartek", "Piatek")
+  val s = List("Sobota", "Niedziela")
+  def dzien(d: String, w: List[String], s: List[String])= d match {
+    case d: String if w.contains(d) => "Praca"
+    case d: String if s.contains(d) => "Weekend"
+    case x => "Nie ma takiego dnia jak " + x
+  }
+  dzien(d, w, s)
+}
+
+work("Czwartek")
+
+work("Sobota")
+
+work("Thor's day")
+
+2.
+class KontoBankowe(private var _stanKonta:Double=0){
+  def stan: Unit={println(_stanKonta)}
+  def wplata(x: Double): Unit={
+    if (x > 0) {this._stanKonta += x}
+    else println("Error")
+  }
+  def wyplata(x: Double): Unit={
+    if (x > 0) {this._stanKonta -= x}
+    else println("Error")
+  }
+}
+
+val bieda = new KontoBankowe(1500)
+
+bieda.wplata(500)
+
+bieda.wyplata(420)
+
+bieda.stan
+
+3.
+class Osoba(var Imie:String, var Nazwisko:String)
+val osoba1 = new Osoba("Naj", "Ikslawok")
+val osoba2 = new Osoba("Zsuiram", "Najzdup")
+val osoba3 = new Osoba("Thcerbla", "Nrelloznehoh")
+val osoba4 = new Osoba("Stanisław", "Lem")
+val osoba5 = new Osoba("Ourtghesta", "Hkaroum")
+val osoba6 = new Osoba("Lrak", "Nabru")
+def Greetings(o:Osoba) = o.Nazwisko match{
+  case "Lem" => "Pan jest ssakiem, tak? A więc miłego ssania."
+  case "Najzdup" => "Hello there!"
+  case "Nabru" => "Well, well, well. If it ain't the Invisible C___."
+  case x => "Greetings Traveler!"
+}
+
+Greetings(osoba1)
+
+Greetings(osoba2)
+
+Greetings(osoba3)
+
+Greetings(osoba4)
+
+Greetings(osoba5)
+
+Greetings(osoba6)
+
+4.
+def pow2(a: Int) = (a:Int) => a*a
+
+def pow3(x:Int, f:Int=>Int): Int={
+  var out:Int = f(f(f(x)))
+  return out
+}
+var y:Int = 2
+pow2(y)
+pow3(y, pow2(y))
+
+5.
+class Osoba(private val _imie:String, private val _nazwisko:String){
+  val podatek:Double=1500
+  def imie=_imie
+  def nazwisko=_nazwisko
+}
+trait Student extends Osoba{
+  override val podatek:Double = 0
+}
+
+trait Pracownik(var pensja:Double) extends Osoba{
+  override val podatek:Double = 0.2*pensja
+  
+}
+trait Nauczyciel() extends Pracownik{
+  override val podatek:Double = 0.1*pensja
+}
+
+
+val o1 = new Osoba("Zygmunt", "Staszic") with Pracownik(2500) with Nauczyciel
+val o2 = new Osoba("Albert", "Katz") with Student
+val o3 = new Osoba("Jaryma", "Orb") with Pracownik(3500)
+val o4 = new Osoba("Konrad", "Zwalenrod") with Pracownik(1800) with Student
+val o5 = new Osoba("Zwalenrod", "Konrad") with Student with Pracownik(1800)
+println(o1.podatek)
+println(o2.podatek)
+println(o3.podatek)
+println(o4.podatek)
+println(o5.podatek)
