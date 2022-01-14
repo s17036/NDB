@@ -1,0 +1,51 @@
+1.
+def pow2(x: Int) = (x:Int) => x*x
+
+class Container[A](private var _x: A){
+  def getContent = {print(_x)}
+  def applyFunction[A, R](f:A=>R) = (_x: A) => f(_x)
+}
+
+val con = new Container(4)
+con.getContent
+con.applyFunction(pow2(_))
+
+2.
+trait Maybe[A]{}
+
+class No extends Maybe[Nothing]
+class Yes[A](x: A) extends Maybe[A]
+
+val no1 = new No
+val yes2 = new Yes[Int](2)
+
+no1.isInstanceOf[Maybe[_]]
+
+yes2.isInstanceOf[Maybe[_]]
+
+3&4.
+trait Maybe[+A]{
+  def applyFunction[R](f: A => R): Maybe[R]
+  def getOrElse[B >: A](getValue: B): B
+}
+
+class No extends Maybe[Nothing]{
+  override def applyFunction[R](f: Nothing => R): Maybe[R] = new No()
+
+  override def getOrElse[B >: Nothing](getValue: B): B = getValue
+}
+
+class Yes[A](var value: A) extends Maybe[A] {
+  override def applyFunction[R](f: A => R): Maybe[R] = new Yes(f(value))
+
+  override def getOrElse[B >: A](getValue: B): A = value
+}
+
+val no = new No
+val yes = new Yes[Int](2)
+
+println(no.applyFunction(x => x))
+println(yes.applyFunction(x => x+x))
+
+println(no.getOrElse(5))
+println(yes.getOrElse(5))
